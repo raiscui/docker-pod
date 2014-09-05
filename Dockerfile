@@ -8,8 +8,12 @@ RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 RUN npm install -g pod
 RUN ln -s /usr/local/lib/node_modules/pod/node_modules/pm2/bin/pm2 /usr/local/bin/pm2
 
-RUN mkdir /nodeapp
-RUN echo '/nodeapp' | pod 
+VOLUME ["/.pm2","/nodeapp"]
+
+#RUN mkdir /nodeapp
+#RUN echo "/nodeapp" | pod 
+RUN pod && echo "/nodeapp"
+
 ADD podrc /.podrc
 RUN rm -f /run.sh
 ADD run.sh /run.sh
