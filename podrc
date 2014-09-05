@@ -1,0 +1,12 @@
+{
+    "root": "/nodeapp",
+    "node_env": "development",
+    "default_script": "app.js",
+    "apps": {},
+    "web": {
+        "username": "admin",
+        "password": "gkdiyesl",
+        "port": 19999,
+        "jsonp": true
+    }
+}
